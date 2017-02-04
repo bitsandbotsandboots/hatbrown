@@ -16,3 +16,6 @@ http://webaudiodemos.appspot.com/
 https://github.com/ciconia/awesome-music
 
 https://webaudiodemos.appspot.com/Vocoder/index.html#
+
+
+http://socket.io/blog/native-socket-io-and-android/
