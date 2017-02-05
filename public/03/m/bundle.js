@@ -3,34 +3,156 @@ require('./lib/jscolor.js');
 
 $(function() {
 
-	var $canvas = $('#the-canvas');
-	var canvas = $canvas[0];
-	var context = canvas.getContext('2d');
+
+
+	// account & session
 	
-	$canvas.height($canvas.width() / 1.618);
-	$(window).resize(function() {
-		$canvas.height($canvas.width() / 1.618);
-	});
-	
-	
-	function enterFullscreen() {
-		if (canvas.requestFullscreen) {
-			canvas.requestFullscreen();
-		} else if (canvas.webkitRequestFullscreen) {
-			canvas.webkitRequestFullscreen();
-		} else if (canvas.mozRequestFullScreen) {
-			canvas.mozRequestFullScreen();
-		} else if (canvas.msRequestFullscreen) {
-			canvas.msRequestFullscreen();
-		}
+	var // ...
+		database = firebase.database(),
+		userRef;
+
+	function setUser(response) {
+		
+		userRef = database.ref('users/' + response.user.uid);
+		
+		userRef.update({
+			online : true,
+			pic : response.user.photoURL,
+			x : 'x',
+			y : 'y',
+			z : 'z',
+			a : 'b',
+			b : 'g',
+			g : 'a'
+		});
+		
+		userRef.onDisconnect().update({
+			online : false,
+			x : 'x',
+			y : 'y',
+			z : 'z',
+			a : 'b',
+			b : 'g',
+			g : 'a'
+		});
+		
+		$('#account-action-buttons').css('display', 'none');
+		$('#session-bar').css('display', 'block');
+		$('#profile-pic').replaceWith((function() {
+			var profPic = document.createElement('img');
+			profPic.src = response.user.photoURL;
+			profPic.id = 'profile-pic';
+			return profPic;
+		})());
+		$('#display-name').html(response.user.displayName + '<span>' + response.user.email + '</span>');
+		$('header p').css('display', 'none');
+		$('main').css('display', 'block');
+		
 	}
 	
-	$('#enter-fullscreen-button').click(function() {
-		enterFullscreen();
+	$('#login-with-google-button').click(function() {
+		var provider = new firebase.auth.GoogleAuthProvider();
+		firebase.auth().signInWithPopup(provider).then(function(response) {
+			setUser(response);
+		}).catch(function(error) {
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  var email = error.email;
+		  var credential = error.credential;
+		});
 	});
 	
-	$canvas.dblclick(function() {
-		enterFullscreen();
+	$('#logout-button').click(function() {
+		firebase.auth().signOut().then(function() {
+			$('#account-action-buttons').css('display', 'block');
+			$('#session-bar').css('display', 'none');
+			$('main').css('display', 'none');
+			$('header p').css('display', 'block');
+			streaming = false;
+		}, function(error) {
+			console.log(error);
+		});
+	});
+	
+	
+	
+	
+	
+	var // ...
+	
+		b = $('#b'),
+		g = $('#g'),
+		a = $('#a'),
+		x = $('#x'),
+		y = $('#y'),
+		z = $('#z');
+	
+	
+	var streaming = true;
+	
+	var orientationIteration = 0;
+	
+	window.addEventListener('deviceorientation', function(e) {
+		
+		if(streaming) {
+		
+			if(orientationIteration % 5 === 0) {
+		
+				b.html(e.beta.toFixed(2));
+				g.html(e.gamma.toFixed(2));
+				a.html(e.alpha.toFixed(2));
+				
+				userRef.update({
+					b : e.beta.toFixed(2),
+					g : e.gamma.toFixed(2),
+					a : e.alpha.toFixed(2)
+				});
+			
+				orientationIteration = 0;
+			
+			}
+		
+			orientationIteration++;
+		
+		}
+		
+	}, false);
+	
+	var accelerationIteration = 0;
+	
+	window.addEventListener('devicemotion', function(e) {
+		
+		if(streaming) {
+		
+			if(accelerationIteration % 5 === 0) {
+		
+				x.html(e.acceleration.x.toFixed(2));
+				y.html(e.acceleration.y.toFixed(2));
+				z.html(e.acceleration.z.toFixed(2));
+				
+				userRef.update({
+					x : e.acceleration.x.toFixed(2),
+					y : e.acceleration.y.toFixed(2),
+					z : e.acceleration.z.toFixed(2)
+				});
+			
+				accelerationIteration = 0;
+			
+			}
+		
+			accelerationIteration++;
+			
+		}
+		
+	}, false);
+	
+	$('#stop-start-streaming-button').click(function() {
+		$(this).html(streaming ? 'start streaming' : 'stop streaming');
+		streaming = !streaming;
+		userRef.update({
+			online : streaming
+		});
+		
 	});
 
 });

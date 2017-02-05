@@ -17,23 +17,56 @@
 		
 		
 			<header class='bar'>
+				<div id='session-bar'>
+					<img id='profile-pic' src='https://scontent.fzty2-1.fna.fbcdn.net/v/t31.0-8/15196089_1368754396492538_7599246613985569445_o.jpg?oh=4506edba8e83901ff9209ac93aa80f8e&oe=58FECC85'>
+					<div id='display-name'></div>
+					<div class='account-action-button' id='logout-button'>sign out</div>
+				</div>
 				<h1>CANVAST</h1>
 				<h3>the public projection mural</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. To contribute to draw on Canvast, <a href='#'>click here</a> (accelerometer/gyroscope devices only)</p>
+				<p>Welcome to the canvast paintbrush! To<br>check out the canvast viewer, <a href='#'>click here</a>. Collaborators await! <b>Login to draw:</b></p>
+				<div id='account-action-buttons'>
+					<div class='login-method-button' id='login-with-google-button'><i class='fa fa-google' aria-hidden='true'></i> login with google</div>
+				</div>
 			</header>
 			
 			<main>
-				<canvas id='the-canvas'></canvas>
-				<hr>
-				<div id='canvas-controls'>
-					<div id='enter-fullscreen-button'><i class='fa fa-arrows-alt' aria-hidden='true'></i></div>
+			
+				<div id='measures'>
+					<div>
+						<div>
+							<div>X</div>
+							<div>Y</div>
+							<div>Z</div>
+						</div>
+						<div>
+							<div id='x'>N</div>
+							<div id='y'>N</div>
+							<div id='z'>N</div>
+						</div>
+					</div>
+					<div>
+						<div>
+							<div>B</div>
+							<div>G</div>
+							<div>A</div>
+						</div>
+						<div>
+							<div id='b'>N</div>
+							<div id='g'>N</div>
+							<div id='a'>N</div>
+						</div>
+					</div>
 				</div>
+				
+				<div id='stop-start-streaming-button'>stop streaming</div>
+				
 			</main>
 			
 			<footer>
 				<hr>
 				<div id='thank-you'>made with <i class='fa fa-heart' aria-hidden='true'></i> at hack@brown</div>
-				<div id='credits'>created by Nick Peltier, Rory Makuch, Josh Gyllinsky & Harry Solovay</div>
+				<div id='credits'>created by Nick Peltier, Rory Makuch,<br>Josh Gyllinsky & Harry Solovay</div>
 			</footer>
 			
 		
@@ -49,6 +82,18 @@
 			crossorigin="anonymous">
 		</script>
 		
+		<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+		<script>
+		  	// Initialize Firebase
+		  	var config = {
+				apiKey: "AIzaSyAE3Q10f-qLqPJIfmfXBlA7EPT9dfDjLjM",
+				authDomain: "canvast-5bf74.firebaseapp.com",
+				databaseURL: "https://canvast-5bf74.firebaseio.com",
+				storageBucket: "canvast-5bf74.appspot.com",
+				messagingSenderId: "898802853894"
+			};
+			firebase.initializeApp(config);
+		</script>
 		<script src='bundle.js'></script>
 		<script src='https://use.typekit.net/scn0ojn.js'></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
