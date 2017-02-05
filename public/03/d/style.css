@@ -1,0 +1,292 @@
+/* line 5, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 5, scss/style.scss */
+[data-canvast-root] {
+  background-color: #ffffff;
+  width: 100%;
+  overflow: hidden;
+}
+/* line 11, scss/style.scss */
+[data-canvast-root], [data-canvast-root] * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-backface-visibility: none;
+          backface-visibility: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+/* line 18, scss/style.scss */
+[data-canvast-root]:not(i), [data-canvast-root] *:not(i) {
+  font-family: 'raleway';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+/* line 27, scss/style.scss */
+[data-canvast-root] .clearfix, [data-canvast-root] header #session-bar, [data-canvast-root] header #account-action-buttons, [data-canvast-root] main #canvas-controls {
+  zoom: 1;
+}
+/* line 28, scss/style.scss */
+[data-canvast-root] .clearfix:before, [data-canvast-root] header #session-bar:before, [data-canvast-root] header #account-action-buttons:before, [data-canvast-root] main #canvas-controls:before, [data-canvast-root] .clearfix:after, [data-canvast-root] header #session-bar:after, [data-canvast-root] header #account-action-buttons:after, [data-canvast-root] main #canvas-controls:after {
+  content: '';
+  display: table;
+}
+/* line 34, scss/style.scss */
+[data-canvast-root] .clearfix:after, [data-canvast-root] header #session-bar:after, [data-canvast-root] header #account-action-buttons:after, [data-canvast-root] main #canvas-controls:after {
+  clear: both;
+}
+/* line 39, scss/style.scss */
+[data-canvast-root] hr {
+  display: block;
+  padding: 0px;
+  height: 1px;
+  background-color: #dddddd;
+  border-width: 0px;
+  max-width: 720px;
+  width: 90%;
+  margin: 0px auto;
+}
+/* line 50, scss/style.scss */
+[data-canvast-root] header {
+  text-align: center;
+}
+/* line 52, scss/style.scss */
+[data-canvast-root] header #session-bar {
+  border-bottom: 1px solid #dddddd;
+  padding: 16px 14px 16px 14px;
+  max-width: 720px;
+  width: 100%;
+  margin: 0px auto;
+}
+/* line 60, scss/style.scss */
+[data-canvast-root] header #session-bar #profile-pic {
+  margin: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 7px;
+}
+/* line 68, scss/style.scss */
+[data-canvast-root] header #session-bar #display-name {
+  display: block;
+  float: left;
+  text-align: left;
+  line-height: 12px;
+  padding-top: 6px;
+  margin-top: 1px;
+}
+/* line 75, scss/style.scss */
+[data-canvast-root] header #session-bar #display-name span {
+  display: block;
+  font-size: 12px;
+  line-height: 24px;
+}
+/* line 81, scss/style.scss */
+[data-canvast-root] header #session-bar #logout-button {
+  display: block;
+  float: right;
+  margin: 1px;
+  padding-top: 9px;
+  color: #d91e18;
+  cursor: pointer;
+}
+/* line 90, scss/style.scss */
+[data-canvast-root] header h1 {
+  font-family: 'futura';
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 60px;
+  margin-top: 15px;
+}
+/* line 97, scss/style.scss */
+[data-canvast-root] header h3 {
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: -7px;
+  margin-bottom: 18px;
+}
+/* line 103, scss/style.scss */
+[data-canvast-root] header p {
+  text-align: center;
+  width: 90%;
+  max-width: 720px;
+  margin: 0px auto;
+  padding: 0px 0px 8px 0px;
+}
+/* line 109, scss/style.scss */
+[data-canvast-root] header p b {
+  font-weight: 500;
+}
+/* line 113, scss/style.scss */
+[data-canvast-root] header #account-action-buttons {
+  width: 90%;
+  max-width: 720px;
+  margin: 0px auto 0px auto;
+  padding: 15px 0px;
+}
+/* line 121, scss/style.scss */
+[data-canvast-root] header .login-method-button {
+  cursor: pointer;
+  display: block;
+  padding: 7px 10px 5px 10px;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 18px;
+  border-radius: 4px;
+  color: #ffffff;
+  margin-top: 7.5px;
+}
+/* line 131, scss/style.scss */
+[data-canvast-root] header .login-method-button:first-child {
+  margin-top: 0px !important;
+}
+/* line 134, scss/style.scss */
+[data-canvast-root] header .login-method-button i {
+  padding-right: 4px;
+}
+@media screen and (min-width: 630px) {
+  /* line 140, scss/style.scss */
+  [data-canvast-root] header #account-action-buttons {
+    padding-bottom: 15px;
+  }
+  /* line 143, scss/style.scss */
+  [data-canvast-root] header .login-method-button {
+    float: left;
+    margin-top: 0px;
+    width: 32.333%;
+    margin: 0px .5%;
+  }
+}
+/* line 151, scss/style.scss */
+[data-canvast-root] header #login-with-facebook-button {
+  background-color: #3B5998;
+}
+/* line 155, scss/style.scss */
+[data-canvast-root] header #login-with-google-button {
+  background-color: #dd4b39;
+}
+/* line 159, scss/style.scss */
+[data-canvast-root] header #login-anonymously-button {
+  background-color: #BF55EC;
+}
+/* line 167, scss/style.scss */
+[data-canvast-root] main {
+  padding: 15px 5%;
+}
+/* line 171, scss/style.scss */
+[data-canvast-root] main #the-canvas {
+  display: block;
+  position: relative;
+  width: 100%;
+  background-color: #000000;
+  max-width: 720px;
+  margin: 0px auto -1px auto;
+  border-radius: 4px;
+}
+/* line 181, scss/style.scss */
+[data-canvast-root] main #canvas-controls {
+  max-width: 720px;
+  margin: 0px auto;
+  position: relative;
+  top: -40px;
+  z-index: 10000;
+}
+/* line 190, scss/style.scss */
+[data-canvast-root] main #enter-fullscreen-button {
+  float: right;
+  border-width: 0px;
+  padding: 9px 12px 7px 12px;
+  color: #ffffff;
+}
+/* line 200, scss/style.scss */
+[data-canvast-root] footer {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+}
+/* line 207, scss/style.scss */
+[data-canvast-root] footer #thank-you {
+  margin-top: 25px;
+  margin-bottom: -1px;
+}
+/* line 210, scss/style.scss */
+[data-canvast-root] footer #thank-you i {
+  color: #d91e18;
+}
+/* line 215, scss/style.scss */
+[data-canvast-root] footer #credits {
+  font-size: 12px;
+  margin-bottom: 22px;
+}
