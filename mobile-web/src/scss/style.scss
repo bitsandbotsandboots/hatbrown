@@ -1,0 +1,224 @@
+
+	@import 'compass';
+	@import 'compass/reset';
+
+	[data-canvast-root] {
+	
+		background-color : #ffffff;
+		width : 100%;
+		overflow : hidden;
+
+		&, * {
+			box-sizing : border-box;
+			backface-visibility : none;
+			appearance : none;
+			text-size-adjust: 100%;
+			-webkit-tap-highlight-color : transparent;
+	
+			&:not(i) {
+				font-family : 'raleway';
+				font-weight: 300;
+				font-size : 16px;
+				line-height : 24px;
+				color : #000000;
+			}
+		}
+		
+		.clearfix {
+			&:before,
+			&:after {
+				content : '';
+				display : table;
+			}
+			zoom : 1;
+			&:after {
+				clear : both;
+			}
+		}
+		
+		hr {
+			display : block;
+			padding : 0px;
+			height : 1px;
+			background-color : #dddddd;
+			border-width : 0px;
+			max-width : 720px;
+			width : 90%;
+			margin : 0px auto;
+		}
+		
+		header {
+			text-align : center;
+			#session-bar {
+				display : none;
+				border-bottom : 1px solid #dddddd;
+				padding : 16px 14px 16px 14px;
+				max-width : 720px;
+				width : 100%;
+				margin : 0px auto 30px auto;
+				@extend .clearfix;
+				#profile-pic {
+					margin : 1px;
+					width : 40px;
+					height : 40px;
+					border-radius : 50%;
+					float : left;	
+					margin-right : 7px;
+				}
+				#display-name {
+					display : block;
+					float : left;
+					text-align : left;
+					line-height : 12px;
+					padding-top : 6px;
+					margin-top : 1px;
+					span {
+						display : block;
+						font-size : 12px;
+						line-height : 24px;
+					}
+				}
+				#logout-button {
+					display : block;
+					float : right;
+					margin : 1px;
+					padding-top : 9px;
+					color : #d91e18;
+					cursor : pointer;
+				}
+			}
+			h1 {
+				font-family : 'futura';
+				text-transform : uppercase;
+				font-size : 40px;
+				line-height : 60px;
+				margin-top : 15px;
+			}
+			h3 {
+				font-size : 16px;
+				line-height : 24px;
+				margin-top : -7px;
+				margin-bottom : 18px;
+			}
+			p {
+				text-align : center;
+				width : 90%;
+				max-width : 720px;
+				margin : 15px auto 0px auto;
+				padding : 0px 0px 8px 0px;
+				b {
+					font-weight : 500;
+				}
+			}
+			#account-action-buttons {
+				width : 90%;
+				max-width : 720px;
+				margin : 30px auto 0px auto;
+				padding : 15px 0px;
+				@extend .clearfix;
+			}
+			
+			.login-method-button {
+				cursor : pointer;
+				display : block;
+				padding : 12px 10px 10px 10px;
+				text-transform : uppercase;
+				font-size : 13px;
+				line-height : 18px;
+				border-radius : 4px;
+				color : #ffffff;
+				margin-top : 7.5px;
+				&:first-child {
+					margin-top : 0px !important;
+				}
+				i {
+					padding-right : 4px;
+				}
+			}
+			
+			#login-with-facebook-button {
+				background-color : #3B5998;
+			}
+			
+			#login-with-google-button {
+				background-color : #dd4b39;
+			}
+			
+		}
+		
+		
+		main {
+		
+			display : none;
+			width : 90%;
+			margin : 15px auto 0px auto;
+			max-width : 720px;
+		
+			#measures {
+			
+				> div {
+					
+					border-top : 1px solid #dddddd;
+					border-bottom : 1px solid #dddddd;
+					border-left : 1px solid #dddddd;
+					margin-bottom : 15px;
+					
+					> div {
+						@extend .clearfix;
+						&:first-child {
+							border-bottom : 1px solid #dddddd;
+						}
+						
+						> div {
+							display : block;
+							float : left;
+							width : 33.333%;
+							text-align : center;
+							border-right : 1px solid #dddddd;
+						}
+						
+					}
+				
+				}
+			
+			}
+			
+			#stop-start-streaming-button {
+				display : block;
+				cursor : pointer;
+				padding : 12px 10px 10px 10px;
+				text-transform : uppercase;
+				font-size : 13px;
+				line-height : 18px;
+				border-radius : 4px;
+				text-align : center;
+				border : 1px solid #dddddd;
+				margin-top : 15px;
+			}
+		
+		}
+		
+		
+		footer {
+			position : absolute;
+			right : 0px;
+			bottom : 0px;
+			left : 0px;
+			text-align : center;
+			border-top : 1px solid #dddddd;
+			
+			#thank-you {
+				margin-top : 40px;
+				margin-bottom : 13px;
+				i {
+					color : #d91e18;
+				}
+			}
+			
+			#credits {
+				font-size : 12px;
+				margin-bottom : 38px;
+			}
+			
+		}
+	}
