@@ -36,6 +36,31 @@
     init();
     animate();
 
+//var scene = new THREE.Scene();
+//var camera = new THREE.PerspectiveCamera(50, 500 / 400, 0.1, 1000);
+
+//var renderer = new THREE.WebGLRenderer();
+//renderer.setSize(500, 400);
+//document.body.appendChild(renderer.domElement);
+
+
+
+camera.position.z = 10;
+var render = function () {
+    requestAnimationFrame(render);
+
+    cube.rotation.y += 0.01;
+
+    renderer.render(scene, camera);
+};
+
+//render();
+
+
+  var obgeometry;// = new THREE.SphereGeometry(3, 50, 50, 0, Math.PI * 2, 0, Math.PI * 2);
+    var obmaterial;// = new THREE.MeshNormalMaterial();
+    var sphereobj;// = new THREE.Mesh(geometry, material);
+
     function init() {
       renderer = new THREE.WebGLRenderer();
       element = renderer.domElement;
@@ -49,6 +74,10 @@
       camera = new THREE.PerspectiveCamera(90, 1, 0.001, 700);
       camera.position.set(0, 10, 0);
       scene.add(camera);
+
+
+
+
 
       controls = new THREE.OrbitControls(camera, element);
       controls.rotateUp(Math.PI / 4);
@@ -101,6 +130,19 @@
       mesh.rotation.x = -Math.PI / 2;
       scene.add(mesh);
 
+
+ //   obgeometry = new THREE.SphereGeometry(3, 50, 50, 0, Math.PI * 2, 0, Math.PI * 2);
+   // obmaterial = new THREE.MeshNormalMaterial();
+
+
+
+obgeometry = new THREE.SphereGeometry( 5, 32, 32 );
+ obmaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+
+    sphereobj = new THREE.Mesh(obgeometry, material);
+   scene.add(sphereobj);
+
+
       window.addEventListener('resize', resize, false);
       setTimeout(resize, 1);
     }
@@ -125,11 +167,19 @@
     }
 
     function render(dt) {
+
+
+
+
       effect.render(scene, camera);
     }
 
     function animate(t) {
       requestAnimationFrame(animate);
+
+    sphereobj.rotation.y += 0.01;
+
+
 
       update(clock.getDelta());
       render(clock.getDelta());
