@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="uri.egr.biosensing.anearbeta">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="com.microsoft.band.service.access.BIND_BAND_SERVICE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@drawable/hack"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".ViewBlackoutSettingActivity"/>
+        <activity android:name=".BlackoutSettingsActivity"/>
+
+        <service android:name=".services.RecordManagerService"/>
+        <service android:name=".services.HeartRateCollectionService"/>
+        <service android:name=".services.CSVLoggingService"/>
+        <service android:name=".services.AudioCollectionService"/>
+        <service android:name=".services.AccelerometerCollectionService"/>
+        <service android:name=".services.AmbientLightCollectionService"/>
+        <service android:name=".services.BandContactCollectionService"/>
+        <service android:name=".services.GSRCollectionService"/>
+        <service android:name=".services.RRIntervalCollectionService"/>
+        <service android:name=".services.SkinTemperatureCollectionService"/>
+
+        <receiver android:name=".receivers.SDCardEjectReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_EJECT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receivers.SDCardInsertReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receivers.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receivers.AlarmReceiver"/>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+    </application>
+
+</manifest>

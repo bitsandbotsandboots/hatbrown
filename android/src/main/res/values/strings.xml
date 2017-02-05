@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Canvast</string>
+
+    <string name="facebook_app_id">161347381029939</string>
+
+    <!--Preferences Strings-->
+    <string name="pref_group_audio">Audio Recording Settings</string>
+    <string name="pref_group_sensor">Sensor Recording Settings</string>
+    <string name="pref_group_other">Other Settings</string>
+
+    <string name="pref_audio_enable">Enable Periodic Audio Recordings</string>
+    <string name="pref_audio_duration">Audio Recording Duration</string>
+    <string name="pref_audio_delay">Delay Between Audio Recordings</string>
+    <string name="pref_sensor_enable">Enable Periodic Sensor Recordings</string>
+    <string name="pref_sensor_duration">Sensor Recording Duration</string>
+    <string name="pref_sensor_delay">Delay Between Sensor Recordings</string>
+    <string name="pref_sensor_select">Select Sensors to Record</string>
+    <string name="pref_sensor_trigger">Select Trigger Sensors</string>
+    <string name="pref_sensor_dynamic_blackout_enable">Enable Dynamic Blackout Settings</string>
+    <string name="pref_id">Username</string>
+    <string name="pref_save_location">Save Location</string>
+    <string name="pref_blackout_settings">Blackout Settings</string>
+    <string name="pref_security">Security</string>
+    <string name="data"></string>
+
+    <!--Blackout Settings Strings-->
+    <string name="b_settings_save">Save</string>
+    <string name="b_settings_delete">Delete</string>
+    <string name="b_settings_weekends">Weekends</string>
+    <string name="b_settings_weekend_string">Weekends</string>
+    <string name="b_settings_weekday_string">Weekdays</string>
+
+    <string-array name="default_sensors">
+        <item>pref_enable_acc</item>
+        <item>pref_enable_light</item>
+        <item>pref_enable_contact</item>
+        <item>pref_enable_hr</item>
+        <item>pref_enable_gsr</item>
+        <item>pref_enable_rr</item>
+        <item>pref_enable_temp</item>
+    </string-array>
+    <string-array name="default_triggers">
+        <item>pref_enable_hr</item>
+    </string-array>
+    <string-array name="available_sensors">
+        <item>Accelerometer</item>
+        <item>Ambient Light</item>
+        <item>Band Contact</item>
+        <item>Heart Rate</item>
+        <item>GSR</item>
+        <item>RR Interval</item>
+        <item>Skin Temperature</item>
+    </string-array>
+    <!--Currently only HR can trigger audio-->
+    <string-array name="trigger_sensors">
+        <item>Heart Rate</item>
+    </string-array>
+    <string-array name="available_sensors_keys">
+        <item>pref_enable_acc</item>
+        <item>pref_enable_light</item>
+        <item>pref_enable_contact</item>
+        <item>pref_enable_hr</item>
+        <item>pref_enable_gsr</item>
+        <item>pref_enable_rr</item>
+        <item>pref_enable_temp</item>
+    </string-array>
+
+    <string-array name="storage_locations">
+        <item>SD Card</item>
+        <item>Documents</item>
+    </string-array>
+    <string-array name="storage_keys">
+        <item>location_sd_card</item>
+        <item>location_documents</item>
+    </string-array>
+</resources>

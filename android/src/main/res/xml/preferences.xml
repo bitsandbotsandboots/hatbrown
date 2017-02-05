@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_group_sensor">
+
+        <SwitchPreference
+            android:id="@+id/pref_sensor_enable"
+            android:title="@string/pref_sensor_enable"
+            android:key="pref_sensor_enable"
+            android:defaultValue="false"/>
+        <EditTextPreference
+            android:id="@+id/pref_sensor_duration"
+            android:title="@string/pref_sensor_duration"
+            android:key="pref_sensor_duration"
+            android:inputType="number"
+            android:defaultValue="60"/>
+        <EditTextPreference
+            android:id="@+id/pref_sensor_delay"
+            android:title="@string/pref_sensor_delay"
+            android:key="pref_sensor_delay"
+            android:inputType="number"
+            android:defaultValue="0"/>
+        <MultiSelectListPreference
+            android:title="@string/pref_sensor_select"
+            android:key="pref_sensor_select"
+            android:defaultValue="@array/default_sensors"
+            android:entries="@array/available_sensors"
+            android:entryValues="@array/available_sensors_keys" />
+        <MultiSelectListPreference
+            android:title="@string/pref_sensor_trigger"
+            android:key="pref_sensor_trigger"
+            android:defaultValue="@array/default_triggers"
+            android:entries="@array/trigger_sensors"
+            android:entryValues="@array/available_sensors_keys" />
+        <EditTextPreference
+            android:id="@+id/pref_id"
+            android:title="@string/pref_id"
+            android:key="pref_identifier" />
+
+    </PreferenceCategory>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="Erasing"
+        android:key="erasing_preference" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="Drawing"
+        android:key="draw_preference" />
+
+</PreferenceScreen>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "282764721778",
+    "firebase_url": "https://canvast-b8ab4.firebaseio.com",
+    "project_id": "canvast-b8ab4",
+    "storage_bucket": "canvast-b8ab4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282764721778:android:eaf876d23716d061",
+        "android_client_info": {
+          "package_name": "uri.egr.biosensing.anearbeta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282764721778-0q0sqiq8di1e6klos6ii9pgb0li26tpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQShN4A7ILlHo-qolGAltB-7HKMOGNaU4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
