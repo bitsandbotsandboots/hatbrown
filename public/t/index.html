@@ -51,6 +51,9 @@ camera.position.z = 10;
     var obmaterial;// = new THREE.MeshNormalMaterial();
     var sphereobj;// = new THREE.Mesh(geometry, material);
 
+    
+     var sphereobj2;// = new THREE.Mesh(geometry, material);
+    
     function init() {
       renderer = new THREE.WebGLRenderer();
       element = renderer.domElement;
@@ -132,6 +135,11 @@ obgeometry = new THREE.SphereGeometry( 5, 32, 32 );
     sphereobj = new THREE.Mesh(obgeometry, material);
    scene.add(sphereobj);
 
+      
+       sphereobj2= new THREE.Mesh(obgeometry, material);
+       scene.add(sphereobj2);
+      
+      sphereobj2.position.z += 10;
 
       window.addEventListener('resize', resize, false);
       setTimeout(resize, 1);
